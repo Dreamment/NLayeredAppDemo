@@ -35,7 +35,7 @@
             gbxFilterProductName = new GroupBox();
             tbxFilterProductName = new TextBox();
             lblFilterProductName = new Label();
-            groupBox1 = new GroupBox();
+            gbxAdd = new GroupBox();
             btnAdd = new Button();
             lblAddQuantityPerUnit = new Label();
             lblAddUnitsInStock = new Label();
@@ -47,10 +47,23 @@
             tbxAddUnitsInStock = new TextBox();
             tbxAddUnitPrice = new TextBox();
             tbxAddProductName = new TextBox();
+            gbxUpdate = new GroupBox();
+            btnUpdate = new Button();
+            lblUpdateQuantityPerUnit = new Label();
+            lblUpdateUnitsInStock = new Label();
+            lblUpdateUnitPrice = new Label();
+            lblUpdateCategoryId = new Label();
+            lblUpdateProductName = new Label();
+            cbxUpdateCategoryId = new ComboBox();
+            tbxUpdateQuantityPerUnit = new TextBox();
+            tbxUpdateUnitsInStock = new TextBox();
+            tbxUpdateUnitPrice = new TextBox();
+            tbxUpdateProductName = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgwProducts).BeginInit();
             gbxFilterCategory.SuspendLayout();
             gbxFilterProductName.SuspendLayout();
-            groupBox1.SuspendLayout();
+            gbxAdd.SuspendLayout();
+            gbxUpdate.SuspendLayout();
             SuspendLayout();
             // 
             // dgwProducts
@@ -61,6 +74,7 @@
             dgwProducts.RowTemplate.Height = 25;
             dgwProducts.Size = new Size(920, 278);
             dgwProducts.TabIndex = 0;
+            dgwProducts.CellClick += dgwProducts_CellClick;
             // 
             // gbxFilterCategory
             // 
@@ -119,25 +133,25 @@
             lblFilterProductName.TabIndex = 0;
             lblFilterProductName.Text = "Product Name :";
             // 
-            // groupBox1
+            // gbxAdd
             // 
-            groupBox1.Controls.Add(btnAdd);
-            groupBox1.Controls.Add(lblAddQuantityPerUnit);
-            groupBox1.Controls.Add(lblAddUnitsInStock);
-            groupBox1.Controls.Add(lblAddUnitPrice);
-            groupBox1.Controls.Add(lblAddCategoryId);
-            groupBox1.Controls.Add(lblAddProductName);
-            groupBox1.Controls.Add(cbxAddCategoryId);
-            groupBox1.Controls.Add(tbxAddQuantityPerUnit);
-            groupBox1.Controls.Add(tbxAddUnitsInStock);
-            groupBox1.Controls.Add(tbxAddUnitPrice);
-            groupBox1.Controls.Add(tbxAddProductName);
-            groupBox1.Location = new Point(12, 474);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(343, 203);
-            groupBox1.TabIndex = 3;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            gbxAdd.Controls.Add(btnAdd);
+            gbxAdd.Controls.Add(lblAddQuantityPerUnit);
+            gbxAdd.Controls.Add(lblAddUnitsInStock);
+            gbxAdd.Controls.Add(lblAddUnitPrice);
+            gbxAdd.Controls.Add(lblAddCategoryId);
+            gbxAdd.Controls.Add(lblAddProductName);
+            gbxAdd.Controls.Add(cbxAddCategoryId);
+            gbxAdd.Controls.Add(tbxAddQuantityPerUnit);
+            gbxAdd.Controls.Add(tbxAddUnitsInStock);
+            gbxAdd.Controls.Add(tbxAddUnitPrice);
+            gbxAdd.Controls.Add(tbxAddProductName);
+            gbxAdd.Location = new Point(12, 474);
+            gbxAdd.Name = "gbxAdd";
+            gbxAdd.Size = new Size(343, 203);
+            gbxAdd.TabIndex = 3;
+            gbxAdd.TabStop = false;
+            gbxAdd.Text = "Add a Product";
             // 
             // btnAdd
             // 
@@ -230,12 +244,124 @@
             tbxAddProductName.Size = new Size(216, 23);
             tbxAddProductName.TabIndex = 0;
             // 
+            // gbxUpdate
+            // 
+            gbxUpdate.Controls.Add(btnUpdate);
+            gbxUpdate.Controls.Add(lblUpdateQuantityPerUnit);
+            gbxUpdate.Controls.Add(lblUpdateUnitsInStock);
+            gbxUpdate.Controls.Add(lblUpdateUnitPrice);
+            gbxUpdate.Controls.Add(lblUpdateCategoryId);
+            gbxUpdate.Controls.Add(lblUpdateProductName);
+            gbxUpdate.Controls.Add(cbxUpdateCategoryId);
+            gbxUpdate.Controls.Add(tbxUpdateQuantityPerUnit);
+            gbxUpdate.Controls.Add(tbxUpdateUnitsInStock);
+            gbxUpdate.Controls.Add(tbxUpdateUnitPrice);
+            gbxUpdate.Controls.Add(tbxUpdateProductName);
+            gbxUpdate.Location = new Point(361, 474);
+            gbxUpdate.Name = "gbxUpdate";
+            gbxUpdate.Size = new Size(343, 203);
+            gbxUpdate.TabIndex = 11;
+            gbxUpdate.TabStop = false;
+            gbxUpdate.Text = "Update a Product";
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.Location = new Point(220, 167);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(109, 30);
+            btnUpdate.TabIndex = 10;
+            btnUpdate.Text = "Update Product";
+            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
+            // 
+            // lblUpdateQuantityPerUnit
+            // 
+            lblUpdateQuantityPerUnit.AutoSize = true;
+            lblUpdateQuantityPerUnit.Location = new Point(9, 141);
+            lblUpdateQuantityPerUnit.Name = "lblUpdateQuantityPerUnit";
+            lblUpdateQuantityPerUnit.Size = new Size(98, 15);
+            lblUpdateQuantityPerUnit.TabIndex = 9;
+            lblUpdateQuantityPerUnit.Text = "Quantity Per Unit";
+            // 
+            // lblUpdateUnitsInStock
+            // 
+            lblUpdateUnitsInStock.AutoSize = true;
+            lblUpdateUnitsInStock.Location = new Point(18, 112);
+            lblUpdateUnitsInStock.Name = "lblUpdateUnitsInStock";
+            lblUpdateUnitsInStock.Size = new Size(89, 15);
+            lblUpdateUnitsInStock.TabIndex = 8;
+            lblUpdateUnitsInStock.Text = "Stock Amount :";
+            // 
+            // lblUpdateUnitPrice
+            // 
+            lblUpdateUnitPrice.AutoSize = true;
+            lblUpdateUnitPrice.Location = new Point(68, 83);
+            lblUpdateUnitPrice.Name = "lblUpdateUnitPrice";
+            lblUpdateUnitPrice.Size = new Size(39, 15);
+            lblUpdateUnitPrice.TabIndex = 7;
+            lblUpdateUnitPrice.Text = "Price :";
+            // 
+            // lblUpdateCategoryId
+            // 
+            lblUpdateCategoryId.AutoSize = true;
+            lblUpdateCategoryId.Location = new Point(46, 54);
+            lblUpdateCategoryId.Name = "lblUpdateCategoryId";
+            lblUpdateCategoryId.Size = new Size(61, 15);
+            lblUpdateCategoryId.TabIndex = 6;
+            lblUpdateCategoryId.Text = "Category :";
+            // 
+            // lblUpdateProductName
+            // 
+            lblUpdateProductName.AutoSize = true;
+            lblUpdateProductName.Location = new Point(17, 25);
+            lblUpdateProductName.Name = "lblUpdateProductName";
+            lblUpdateProductName.Size = new Size(90, 15);
+            lblUpdateProductName.TabIndex = 5;
+            lblUpdateProductName.Text = "Product Name :";
+            // 
+            // cbxUpdateCategoryId
+            // 
+            cbxUpdateCategoryId.FormattingEnabled = true;
+            cbxUpdateCategoryId.Location = new Point(113, 51);
+            cbxUpdateCategoryId.Name = "cbxUpdateCategoryId";
+            cbxUpdateCategoryId.Size = new Size(216, 23);
+            cbxUpdateCategoryId.TabIndex = 4;
+            // 
+            // tbxUpdateQuantityPerUnit
+            // 
+            tbxUpdateQuantityPerUnit.Location = new Point(113, 138);
+            tbxUpdateQuantityPerUnit.Name = "tbxUpdateQuantityPerUnit";
+            tbxUpdateQuantityPerUnit.Size = new Size(216, 23);
+            tbxUpdateQuantityPerUnit.TabIndex = 3;
+            // 
+            // tbxUpdateUnitsInStock
+            // 
+            tbxUpdateUnitsInStock.Location = new Point(113, 109);
+            tbxUpdateUnitsInStock.Name = "tbxUpdateUnitsInStock";
+            tbxUpdateUnitsInStock.Size = new Size(216, 23);
+            tbxUpdateUnitsInStock.TabIndex = 2;
+            // 
+            // tbxUpdateUnitPrice
+            // 
+            tbxUpdateUnitPrice.Location = new Point(113, 80);
+            tbxUpdateUnitPrice.Name = "tbxUpdateUnitPrice";
+            tbxUpdateUnitPrice.Size = new Size(216, 23);
+            tbxUpdateUnitPrice.TabIndex = 1;
+            // 
+            // tbxUpdateProductName
+            // 
+            tbxUpdateProductName.Location = new Point(113, 22);
+            tbxUpdateProductName.Name = "tbxUpdateProductName";
+            tbxUpdateProductName.Size = new Size(216, 23);
+            tbxUpdateProductName.TabIndex = 0;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(944, 689);
-            Controls.Add(groupBox1);
+            Controls.Add(gbxUpdate);
+            Controls.Add(gbxAdd);
             Controls.Add(gbxFilterProductName);
             Controls.Add(gbxFilterCategory);
             Controls.Add(dgwProducts);
@@ -247,8 +373,10 @@
             gbxFilterCategory.PerformLayout();
             gbxFilterProductName.ResumeLayout(false);
             gbxFilterProductName.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            gbxAdd.ResumeLayout(false);
+            gbxAdd.PerformLayout();
+            gbxUpdate.ResumeLayout(false);
+            gbxUpdate.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -261,7 +389,7 @@
         private Label lblFilterCategory;
         private TextBox tbxFilterProductName;
         private Label lblFilterProductName;
-        private GroupBox groupBox1;
+        private GroupBox gbxAdd;
         private Label lblAddQuantityPerUnit;
         private Label lblAddUnitsInStock;
         private Label lblAddUnitPrice;
@@ -273,5 +401,17 @@
         private TextBox tbxAddUnitPrice;
         private TextBox tbxAddProductName;
         private Button btnAdd;
+        private GroupBox gbxUpdate;
+        private Button btnUpdate;
+        private Label lblUpdateQuantityPerUnit;
+        private Label lblUpdateUnitsInStock;
+        private Label lblUpdateUnitPrice;
+        private Label lblUpdateCategoryId;
+        private Label lblUpdateProductName;
+        private ComboBox cbxUpdateCategoryId;
+        private TextBox tbxUpdateQuantityPerUnit;
+        private TextBox tbxUpdateUnitsInStock;
+        private TextBox tbxUpdateUnitPrice;
+        private TextBox tbxUpdateProductName;
     }
 }
