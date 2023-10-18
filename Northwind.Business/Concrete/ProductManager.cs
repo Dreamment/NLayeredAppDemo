@@ -19,9 +19,14 @@ namespace Northwind.Business.Concrete
             //Dependency Injection
             _productDal = productDal;
         }
+
+        public void Add(Product product)
+        {
+            _productDal.Add(product);
+        }
+
         public List<Product> GetAll()
         {
-            //Business Code
             return _productDal.GetAll();
         }
 
