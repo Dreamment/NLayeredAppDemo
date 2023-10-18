@@ -95,6 +95,7 @@
             tbxFilterProductName.Name = "tbxFilterProductName";
             tbxFilterProductName.Size = new Size(139, 23);
             tbxFilterProductName.TabIndex = 1;
+            tbxFilterProductName.TextChanged += tbxFilterProductName_TextChanged;
             // 
             // lblFilterProductName
             // 

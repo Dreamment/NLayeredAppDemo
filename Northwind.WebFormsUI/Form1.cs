@@ -43,8 +43,21 @@ namespace Northwind.WebFormsUI
             }
             catch
             {
-                MessageBox.Show("Please select a category");
+
             }
+        }
+
+        private void tbxFilterProductName_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(tbxFilterProductName.Text))
+            {
+                dgwProducts.DataSource = _productService.GetProductsByProductName(tbxFilterProductName.Text);
+            }
+            else
+            {
+                LoadProducts();
+            }
+            
         }
     }
 }
