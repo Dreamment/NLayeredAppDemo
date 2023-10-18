@@ -59,11 +59,24 @@
             tbxUpdateUnitsInStock = new TextBox();
             tbxUpdateUnitPrice = new TextBox();
             tbxUpdateProductName = new TextBox();
+            gbxDelete = new GroupBox();
+            tbxDeleteCategoryId = new TextBox();
+            btnDelete = new Button();
+            lblDeleteQuantityPerUnit = new Label();
+            lblDeleteUnitsInStock = new Label();
+            lblDeleteUnitPrice = new Label();
+            lblDeleteCategoryId = new Label();
+            lblDeleteProductName = new Label();
+            tbxDeleteQuantityPerUnit = new TextBox();
+            tbxDeleteUnitsInStock = new TextBox();
+            tbxDeleteUnitPrice = new TextBox();
+            tbxDeleteProductName = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgwProducts).BeginInit();
             gbxFilterCategory.SuspendLayout();
             gbxFilterProductName.SuspendLayout();
             gbxAdd.SuspendLayout();
             gbxUpdate.SuspendLayout();
+            gbxDelete.SuspendLayout();
             SuspendLayout();
             // 
             // dgwProducts
@@ -355,11 +368,127 @@
             tbxUpdateProductName.Size = new Size(216, 23);
             tbxUpdateProductName.TabIndex = 0;
             // 
+            // gbxDelete
+            // 
+            gbxDelete.Controls.Add(tbxDeleteCategoryId);
+            gbxDelete.Controls.Add(btnDelete);
+            gbxDelete.Controls.Add(lblDeleteQuantityPerUnit);
+            gbxDelete.Controls.Add(lblDeleteUnitsInStock);
+            gbxDelete.Controls.Add(lblDeleteUnitPrice);
+            gbxDelete.Controls.Add(lblDeleteCategoryId);
+            gbxDelete.Controls.Add(lblDeleteProductName);
+            gbxDelete.Controls.Add(tbxDeleteQuantityPerUnit);
+            gbxDelete.Controls.Add(tbxDeleteUnitsInStock);
+            gbxDelete.Controls.Add(tbxDeleteUnitPrice);
+            gbxDelete.Controls.Add(tbxDeleteProductName);
+            gbxDelete.Location = new Point(710, 474);
+            gbxDelete.Name = "gbxDelete";
+            gbxDelete.Size = new Size(343, 203);
+            gbxDelete.TabIndex = 12;
+            gbxDelete.TabStop = false;
+            gbxDelete.Text = "Delete a Product";
+            // 
+            // tbxDeleteCategoryId
+            // 
+            tbxDeleteCategoryId.Location = new Point(113, 51);
+            tbxDeleteCategoryId.Name = "tbxDeleteCategoryId";
+            tbxDeleteCategoryId.ReadOnly = true;
+            tbxDeleteCategoryId.Size = new Size(216, 23);
+            tbxDeleteCategoryId.TabIndex = 11;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(220, 167);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(109, 30);
+            btnDelete.TabIndex = 10;
+            btnDelete.Text = "Delete Product";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // lblDeleteQuantityPerUnit
+            // 
+            lblDeleteQuantityPerUnit.AutoSize = true;
+            lblDeleteQuantityPerUnit.Location = new Point(9, 141);
+            lblDeleteQuantityPerUnit.Name = "lblDeleteQuantityPerUnit";
+            lblDeleteQuantityPerUnit.Size = new Size(98, 15);
+            lblDeleteQuantityPerUnit.TabIndex = 9;
+            lblDeleteQuantityPerUnit.Text = "Quantity Per Unit";
+            // 
+            // lblDeleteUnitsInStock
+            // 
+            lblDeleteUnitsInStock.AutoSize = true;
+            lblDeleteUnitsInStock.Location = new Point(18, 112);
+            lblDeleteUnitsInStock.Name = "lblDeleteUnitsInStock";
+            lblDeleteUnitsInStock.Size = new Size(89, 15);
+            lblDeleteUnitsInStock.TabIndex = 8;
+            lblDeleteUnitsInStock.Text = "Stock Amount :";
+            // 
+            // lblDeleteUnitPrice
+            // 
+            lblDeleteUnitPrice.AutoSize = true;
+            lblDeleteUnitPrice.Location = new Point(68, 83);
+            lblDeleteUnitPrice.Name = "lblDeleteUnitPrice";
+            lblDeleteUnitPrice.Size = new Size(39, 15);
+            lblDeleteUnitPrice.TabIndex = 7;
+            lblDeleteUnitPrice.Text = "Price :";
+            // 
+            // lblDeleteCategoryId
+            // 
+            lblDeleteCategoryId.AutoSize = true;
+            lblDeleteCategoryId.Location = new Point(46, 54);
+            lblDeleteCategoryId.Name = "lblDeleteCategoryId";
+            lblDeleteCategoryId.Size = new Size(61, 15);
+            lblDeleteCategoryId.TabIndex = 6;
+            lblDeleteCategoryId.Text = "Category :";
+            // 
+            // lblDeleteProductName
+            // 
+            lblDeleteProductName.AutoSize = true;
+            lblDeleteProductName.Location = new Point(17, 25);
+            lblDeleteProductName.Name = "lblDeleteProductName";
+            lblDeleteProductName.Size = new Size(90, 15);
+            lblDeleteProductName.TabIndex = 5;
+            lblDeleteProductName.Text = "Product Name :";
+            // 
+            // tbxDeleteQuantityPerUnit
+            // 
+            tbxDeleteQuantityPerUnit.Location = new Point(113, 138);
+            tbxDeleteQuantityPerUnit.Name = "tbxDeleteQuantityPerUnit";
+            tbxDeleteQuantityPerUnit.ReadOnly = true;
+            tbxDeleteQuantityPerUnit.Size = new Size(216, 23);
+            tbxDeleteQuantityPerUnit.TabIndex = 3;
+            // 
+            // tbxDeleteUnitsInStock
+            // 
+            tbxDeleteUnitsInStock.Location = new Point(113, 109);
+            tbxDeleteUnitsInStock.Name = "tbxDeleteUnitsInStock";
+            tbxDeleteUnitsInStock.ReadOnly = true;
+            tbxDeleteUnitsInStock.Size = new Size(216, 23);
+            tbxDeleteUnitsInStock.TabIndex = 2;
+            // 
+            // tbxDeleteUnitPrice
+            // 
+            tbxDeleteUnitPrice.Location = new Point(113, 80);
+            tbxDeleteUnitPrice.Name = "tbxDeleteUnitPrice";
+            tbxDeleteUnitPrice.ReadOnly = true;
+            tbxDeleteUnitPrice.Size = new Size(216, 23);
+            tbxDeleteUnitPrice.TabIndex = 1;
+            // 
+            // tbxDeleteProductName
+            // 
+            tbxDeleteProductName.Location = new Point(113, 22);
+            tbxDeleteProductName.Name = "tbxDeleteProductName";
+            tbxDeleteProductName.ReadOnly = true;
+            tbxDeleteProductName.Size = new Size(216, 23);
+            tbxDeleteProductName.TabIndex = 0;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(944, 689);
+            ClientSize = new Size(1066, 689);
+            Controls.Add(gbxDelete);
             Controls.Add(gbxUpdate);
             Controls.Add(gbxAdd);
             Controls.Add(gbxFilterProductName);
@@ -377,6 +506,8 @@
             gbxAdd.PerformLayout();
             gbxUpdate.ResumeLayout(false);
             gbxUpdate.PerformLayout();
+            gbxDelete.ResumeLayout(false);
+            gbxDelete.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -413,5 +544,17 @@
         private TextBox tbxUpdateUnitsInStock;
         private TextBox tbxUpdateUnitPrice;
         private TextBox tbxUpdateProductName;
+        private GroupBox gbxDelete;
+        private TextBox tbxDeleteCategoryId;
+        private Button btnDelete;
+        private Label lblDeleteQuantityPerUnit;
+        private Label lblDeleteUnitsInStock;
+        private Label lblDeleteUnitPrice;
+        private Label lblDeleteCategoryId;
+        private Label lblDeleteProductName;
+        private TextBox tbxDeleteQuantityPerUnit;
+        private TextBox tbxDeleteUnitsInStock;
+        private TextBox tbxDeleteUnitPrice;
+        private TextBox tbxDeleteProductName;
     }
 }

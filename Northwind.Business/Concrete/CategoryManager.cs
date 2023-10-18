@@ -22,5 +22,10 @@ namespace Northwind.Business.Concrete
         {
             return _categoryDal.GetAll();
         }
+
+        public string GetCategoryName(int categoryId)
+        {
+            return _categoryDal.Get(c => c.CategoryId == categoryId).CategoryName;
+        }
     }
 }
