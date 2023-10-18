@@ -121,6 +121,7 @@ namespace Northwind.WebFormsUI
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            int selectedProductId = Convert.ToInt32(dgwProducts.CurrentRow.Cells[0].Value);
             if (cbxUpdateCategoryId.SelectedIndex == 0)
             {
                 MessageBox.Show("Please choose a category!");
@@ -155,6 +156,33 @@ namespace Northwind.WebFormsUI
             tbxUpdateUnitPrice.Text = dgwProducts.CurrentRow.Cells[3].Value.ToString();
             tbxUpdateQuantityPerUnit.Text = dgwProducts.CurrentRow.Cells[4].Value.ToString();
             tbxUpdateUnitsInStock.Text = dgwProducts.CurrentRow.Cells[5].Value.ToString();
+
+            tbxDeleteProductName.Text = dgwProducts.CurrentRow.Cells[1].Value.ToString();
+            tbxDeleteCategoryId.Text = _categoryName(Convert.ToInt32(dgwProducts.CurrentRow.Cells[2].Value));
+            tbxDeleteUnitPrice.Text = dgwProducts.CurrentRow.Cells[3].Value.ToString();
+            tbxDeleteQuantityPerUnit.Text = dgwProducts.CurrentRow.Cells[4].Value.ToString();
+            tbxDeleteUnitsInStock.Text = dgwProducts.CurrentRow.Cells[5].Value.ToString();
+        }
+
+        private string _categoryName(int categoryId)
+        {
+            return _categoryService.GetCategoryName(Convert.ToInt32(categoryId));
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            _productService.Delete(new Product
+            {
+                ProductId = Convert.ToInt32(dgwProducts.CurrentRow.Cells[0].Value)
+            });
+            LoadProducts();
+            MessageBox.Show("Product Deleted!");
+
+            tbxDeleteProductName.Clear();
+            tbxDeleteCategoryId.Clear();
+            tbxDeleteUnitPrice.Clear();
+            tbxDeleteQuantityPerUnit.Clear();
+            tbxDeleteUnitsInStock.Clear();
         }
     }
 }
