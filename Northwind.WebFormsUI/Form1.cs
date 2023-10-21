@@ -106,16 +106,23 @@ namespace Northwind.WebFormsUI
             }
             else
             {
-                _productService.Add(new Product
+                try
                 {
-                    CategoryId = Convert.ToInt32(cbxAddCategoryId.SelectedValue),
-                    ProductName = tbxAddProductName.Text,
-                    QuantityPerUnit = tbxAddQuantityPerUnit.Text,
-                    UnitPrice = Convert.ToDecimal(tbxAddUnitPrice.Text),
-                    UnitsInStock = Convert.ToInt16(tbxAddUnitsInStock.Text)
-                });
-                LoadProducts();
-                MessageBox.Show("Product Added!");
+                    _productService.Add(new Product
+                    {
+                        CategoryId = Convert.ToInt32(cbxAddCategoryId.SelectedValue),
+                        ProductName = tbxAddProductName.Text,
+                        QuantityPerUnit = tbxAddQuantityPerUnit.Text,
+                        UnitPrice = Convert.ToDecimal(tbxAddUnitPrice.Text),
+                        UnitsInStock = Convert.ToInt16(tbxAddUnitsInStock.Text)
+                    });
+                    LoadProducts();
+                    MessageBox.Show("Product Added!");
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
             }
         }
 
